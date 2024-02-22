@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover button</title>
+  </head>
+  <body>
+    <style>
+      body,
+      html {
+        background-color: #333;
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 180px;
+        height: 500px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      .btn {
+        text-decoration: none;
+        display: inline-block;
+        height: 40px;
+        width: 150px;
+        background-color: #1c293a;
+        line-height: 40px;
+        text-align: center;
+        position: relative;
+        margin: 15px;
+        color: #f7f7f7;
+      }
+
+      .btn::before,
+      .btn::after {
+        transition: 0.3s ease;
+      }
+
+      .btn-1::before {
+        content: "";
+        width: 150px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #1c293a;
+        box-sizing: border-box;
+      }
+
+      .btn-1:hover::before {
+        width: 142px;
+        height: 32px;
+        border: 1px solid #f7f7f7;
+      }
+
+      .btn-2::before {
+        content: "";
+        width: 150px;
+        height: 40px;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        box-sizing: border-box;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+      }
+      .btn-2:hover::before {
+        transform: translate(4px, 4px);
+      }
+
+      .btn-3::before,
+      .btn-3::after {
+        content: "";
+        width: 150px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+      }
+
+      .btn-3::before {
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+      }
+
+      .btn-3::after {
+        border-left: 1px solid #000;
+        border-top: 1px solid #000;
+      }
+
+      .btn-3:hover::before {
+        transform: translate(4px, 4px);
+      }
+
+      .btn-3:hover::after {
+        transform: translate(-4px, -4px);
+      }
+
+      .btn-4 {
+        color: white;
+        z-index: 3;
+        background-color: transparent;
+        box-sizing: border-box;
+        border: 1px solid #1c293a;
+      }
+
+      .btn-4::before {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 40px;
+        top: 50%;
+        left: 50%;
+        z-index: -2;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        background-color: #1c293a;
+      }
+
+      .btn-4:hover::before {
+        width: 100px;
+        height: 0;
+      }
+
+      .btn-4:hover {
+        color: #1c293a;
+      }
+
+      .btn-5 {
+        z-index: 3;
+        background-color: transparent;
+      }
+
+      .btn-5::before {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 40px;
+        top: 50%;
+        left: 50%;
+        z-index: -2;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        background-color: #1c293a;
+        transition: 0.6s;
+      }
+      .btn-5:hover::before {
+        transform: translate(-50%, -50%) rotateX(180deg);
+      }
+
+      .btn-6 {
+        z-index: 3;
+        background-color: transparent;
+      }
+
+      .btn-6::after,
+      .btn-6::before {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 40px;
+        top: 0%;
+        left: 0%;
+        z-index: -2;
+
+        transform-origin: bottom;
+        background-color: #1c293a;
+        transition: 0.2s;
+      }
+
+      .btn-6::after {
+        transition-delay: 0.2s;
+        height: 0;
+      }
+      .btn-6:hover::after {
+        height: 40px;
+      }
+
+      .btn-6:hover::before {
+        transform: rotateX(90deg);
+      }
+
+      .btn-7 {
+        z-index: 3;
+        color: #1c293a;
+        line-height: 80px;
+        overflow: hidden;
+        transition: 0.3s;
+        border: 1px solid #1c293a;
+        box-sizing: border-box;
+      }
+
+      .btn-7::before {
+        line-height: 40px;
+        content: "Hover";
+        color: white;
+        width: 150px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        transform: translateY(0);
+      }
+
+      .btn-7:hover {
+        background-color: #f7f7f7;
+        line-height: 40px;
+      }
+
+      .btn-7:hover::before {
+        transform: translateY(-40px);
+      }
+    </style>
+
+    <div class="container">
+      <a class="btn btn-1" href=""> Hover</a>
+      <a class="btn btn-2" href=""> Hover</a>
+      <a class="btn btn-3" href=""> Hover</a>
+      <a class="btn btn-4" href=""> Hover</a>
+      <a class="btn btn-5" href=""> Hover</a>
+      <a class="btn btn-6" href=""> Hover</a>
+      <a class="btn btn-7" href=""> Hover</a>
+    </div>
+  </body>
+</html>
